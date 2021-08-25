@@ -598,25 +598,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bottomRooms:
+  - {fileID: 2170968823613731645, guid: 14f6f1ba5ca1c9843aaa8ebcd9cca7f3, type: 3}
+  - {fileID: 4235014348675336492, guid: 67812d9f75e511742833121296a6d3f2, type: 3}
+  topRooms:
   - {fileID: 6103773244762308328, guid: 6fc90f4946af8c2499f4c82a74b3cec8, type: 3}
   - {fileID: 9005105221549166508, guid: c8d9ec89deec9d54494761e407e67830, type: 3}
-  - {fileID: 6426744713874845293, guid: 0290e7c7e5f7381438aa86ad5108857c, type: 3}
-  topRooms:
-  - {fileID: 4235014348675336492, guid: 67812d9f75e511742833121296a6d3f2, type: 3}
-  - {fileID: 3037068352419790712, guid: a177369a8baba0444995ed855bcafe5e, type: 3}
-  - {fileID: 2170968823613731645, guid: 14f6f1ba5ca1c9843aaa8ebcd9cca7f3, type: 3}
   leftRooms:
-  - {fileID: 8894430403397646783, guid: 2ff67156ff3de3041a53b9558df51b5e, type: 3}
-  - {fileID: 4235014348675336492, guid: 67812d9f75e511742833121296a6d3f2, type: 3}
-  - {fileID: 460522209035658950, guid: 8335e73a003036f4d8a70d801b21ec13, type: 3}
-  - {fileID: 6426744713874845293, guid: 0290e7c7e5f7381438aa86ad5108857c, type: 3}
-  - {fileID: 3037068352419790712, guid: a177369a8baba0444995ed855bcafe5e, type: 3}
-  rightRooms:
   - {fileID: 4947045609858751093, guid: cf7b5625af2c8e14b921efcef154b970, type: 3}
   - {fileID: 9005105221549166508, guid: c8d9ec89deec9d54494761e407e67830, type: 3}
   - {fileID: 460522209035658950, guid: 8335e73a003036f4d8a70d801b21ec13, type: 3}
-  - {fileID: 6426744713874845293, guid: 0290e7c7e5f7381438aa86ad5108857c, type: 3}
   - {fileID: 3037068352419790712, guid: a177369a8baba0444995ed855bcafe5e, type: 3}
+  - {fileID: 6426744713874845293, guid: 0290e7c7e5f7381438aa86ad5108857c, type: 3}
+  rightRooms:
+  - {fileID: 8894430403397646783, guid: 2ff67156ff3de3041a53b9558df51b5e, type: 3}
+  - {fileID: 4235014348675336492, guid: 67812d9f75e511742833121296a6d3f2, type: 3}
+  - {fileID: 460522209035658950, guid: 8335e73a003036f4d8a70d801b21ec13, type: 3}
+  - {fileID: 3037068352419790712, guid: a177369a8baba0444995ed855bcafe5e, type: 3}
+  - {fileID: 6426744713874845293, guid: 0290e7c7e5f7381438aa86ad5108857c, type: 3}
 --- !u!4 &1716370481
 Transform:
   m_ObjectHideFlags: 0
