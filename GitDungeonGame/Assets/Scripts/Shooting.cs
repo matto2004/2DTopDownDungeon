@@ -9,8 +9,8 @@ public class Shooting : MonoBehaviour
     public GameObject spellPrefab;
     public int type; //1 Nahkampf 2 Bogen 3 Spell
 
-    public float arrowForce = 5f;
-    public float spellForce = 10f;
+    public float arrowForce = 0.5f;
+    public float spellForce = 1f;
     public float charge = 0f;
 
     private void Update()
@@ -51,7 +51,7 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
         charge = 0f;
-        arrowForce = 5f;
+        arrowForce = 0.5f;
     }
     void ShootSpell()
     {
