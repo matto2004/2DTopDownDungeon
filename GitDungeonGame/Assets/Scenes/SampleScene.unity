@@ -156,8 +156,7 @@ MonoBehaviour:
   firePoint: {fileID: 1176041499}
   bulletPrefab: {fileID: 955362887009230810, guid: 67c794495df02464a82c66d4eca2ebee,
     type: 3}
-  bulletForce: 5
-  charge: 0
+  bulletForce: 20
 --- !u!114 &138922198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 2
+  waitTime: 4
 --- !u!1 &995524814
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 1
+  waitTime: 4
 --- !u!1 &1176041498
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,6 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
+  waitTime: 4
 --- !u!1 &1716370479
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +785,11 @@ MonoBehaviour:
   - {fileID: 460522209035658950, guid: 8335e73a003036f4d8a70d801b21ec13, type: 3}
   - {fileID: 3037068352419790712, guid: a177369a8baba0444995ed855bcafe5e, type: 3}
   - {fileID: 6426744713874845293, guid: 0290e7c7e5f7381438aa86ad5108857c, type: 3}
+  closedRoom: {fileID: 4034296680496364748, guid: b095a9b36de7e6440a28955009770cf5,
+    type: 3}
+  rooms: []
+  waitTime: 0
+  boss: {fileID: 4899510946406163223, guid: f18e0461d5d103f4b9c7030db4031f00, type: 3}
 --- !u!4 &1716370481
 Transform:
   m_ObjectHideFlags: 0
@@ -890,3 +897,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  waitTime: 4

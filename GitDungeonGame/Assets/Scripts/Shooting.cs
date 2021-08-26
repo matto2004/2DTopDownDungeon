@@ -59,3 +59,4 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
     }
+}
