@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  spawned: 0
+  waitTime: 4
 --- !u!61 &7102219859652711327
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103,7 +105,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2695225638890189487}
   - component: {fileID: 5338871445599800631}
-  - component: {fileID: -1228390534467803829}
   m_Layer: 0
   m_Name: RoomL
   m_TagString: Untagged
@@ -176,15 +177,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1228390534467803829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8894430403397646783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
