@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
+  waitTime: 4
 --- !u!61 &5658242695668061841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104,6 +105,8 @@ GameObject:
   - component: {fileID: 7440523159589584258}
   - component: {fileID: 8714971908436515976}
   - component: {fileID: 420387554062384011}
+  - component: {fileID: 9156807934769729931}
+  - component: {fileID: 4089111308237295719}
   m_Layer: 0
   m_Name: RoomRL
   m_TagString: Untagged
@@ -120,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 460522209035658950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 7870164443590696766}
   - {fileID: 7248718306879886587}
@@ -189,6 +192,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &9156807934769729931
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460522209035658950}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.100000665, y: 0.020000191}
+  - {x: -0.08999996, y: 0.020000156}
+  - {x: -0.090000145, y: 0.02000018}
+  - {x: -0.090000026, y: 0.020000182}
+  - {x: -0.09000018, y: 0.08999993}
+  - {x: 0.09000037, y: 0.09000007}
+  - {x: 0.09000064, y: 0.01999987}
+  - {x: 0.09999729, y: 0.019998621}
+--- !u!68 &4089111308237295719
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460522209035658950}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.09999999, y: -0.01999991}
+  - {x: -0.08999996, y: -0.019999966}
+  - {x: -0.08999996, y: -0.08999997}
+  - {x: 0.09000038, y: -0.08999973}
+  - {x: 0.090000056, y: -0.019999992}
+  - {x: 0.1, y: -0.019999918}
 --- !u!1 &2172243208085674781
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,3 +331,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  waitTime: 4

@@ -12,22 +12,39 @@ public class Shooting : MonoBehaviour
     public float arrowForce = 0.5f;
     public float spellForce = 1f;
     public float charge = 0f;
+    float time;
+    float timeDelay;
+
+    private void Start()
+    {
+        time = 1f;
+        timeDelay = 1f;
+    }
 
     private void Update()
     {
+        time = time + 1f * Time.deltaTime;
         if (type == 2)
         {
             if (Input.GetButtonUp("Fire1"))
             {
-                arrowForce = arrowForce + charge / 20;
-                Shoot();
+                if (time >= timeDelay)
+                {
+                    time = 0f;
+                    arrowForce = arrowForce + charge / 20;
+                    Shoot();
+                }
             }
         }
         if (type == 3)
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                ShootSpell();
+                if (time >= timeDelay)
+                {
+                    time = 0f;
+                    ShootSpell();
+                }
             }
         }
     }

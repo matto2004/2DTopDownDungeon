@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 6289898630568487633}
   - component: {fileID: 2940282691256755673}
   - component: {fileID: 2947302865781603173}
+  - component: {fileID: 8269058878297828518}
+  - component: {fileID: 8768700275220599174}
+  - component: {fileID: 1762541927422793382}
   m_Layer: 0
   m_Name: RoomRLT
   m_TagString: Untagged
@@ -27,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3037068352419790712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 3074412040646814734}
   - {fileID: 3037333363188658779}
@@ -97,6 +100,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &8269058878297828518
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037068352419790712}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.09999999, y: -0.01999991}
+  - {x: -0.08999996, y: -0.019999966}
+  - {x: -0.08999996, y: -0.08999997}
+  - {x: 0.09000038, y: -0.08999973}
+  - {x: 0.090000056, y: -0.019999992}
+  - {x: 0.1, y: -0.019999918}
+--- !u!68 &8768700275220599174
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037068352419790712}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.1, y: 0.019999428}
+  - {x: -0.08999086, y: 0.01999405}
+  - {x: -0.090014786, y: 0.09003644}
+  - {x: -0.020000327, y: 0.08999889}
+  - {x: -0.02001796, y: 0.10013364}
+--- !u!68 &1762541927422793382
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037068352419790712}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.019998804, y: 0.09999977}
+  - {x: 0.019999633, y: 0.089998685}
+  - {x: 0.090013064, y: 0.08998092}
+  - {x: 0.09000003, y: 0.020000009}
+  - {x: 0.09999996, y: 0.020000085}
 --- !u!1 &3556111874104155689
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,6 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 3
+  waitTime: 4
 --- !u!61 &1524695503673824976
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -257,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 2
+  waitTime: 4
 --- !u!61 &760301856796435260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -376,3 +445,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 4
+  waitTime: 4
