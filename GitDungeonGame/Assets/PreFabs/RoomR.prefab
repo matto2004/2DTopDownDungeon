@@ -103,6 +103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3187449734933019456}
   - component: {fileID: 1819147491424703137}
+  - component: {fileID: 830891467230182566}
   m_Layer: 0
   m_Name: RoomR
   m_TagString: Untagged
@@ -175,3 +176,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &830891467230182566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947045609858751093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
