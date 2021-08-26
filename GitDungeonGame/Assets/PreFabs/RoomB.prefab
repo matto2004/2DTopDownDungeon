@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8189753149918723695}
   - component: {fileID: 3523562025105243252}
   - component: {fileID: -4194521748931343317}
-  - component: {fileID: 2775365608381953069}
+  - component: {fileID: 271971865145629813}
   m_Layer: 0
   m_Name: RoomB
-  m_TagString: Room
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6103773244762308328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 5}
+  m_LocalScale: {x: 10, y: 10, z: 5}
   m_Children:
   - {fileID: 7197480638179855823}
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!68 &2775365608381953069
+--- !u!68 &271971865145629813
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,12 +112,14 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.02006025, y: -0.09009908}
-  - {x: -0.08988395, y: -0.08987658}
-  - {x: -0.08959074, y: 0.08956908}
-  - {x: 0.08985441, y: 0.09031655}
-  - {x: 0.09001922, y: -0.090007186}
-  - {x: 0.020355701, y: -0.089563765}
+  - {x: 0.020000076, y: -0.10000001}
+  - {x: 0.020000104, y: -0.08999995}
+  - {x: 0.090000056, y: -0.08999993}
+  - {x: 0.08999795, y: 0.08999783}
+  - {x: -0.08999994, y: 0.08999956}
+  - {x: -0.089999855, y: -0.08999996}
+  - {x: -0.020007698, y: -0.089990914}
+  - {x: -0.019999973, y: -0.10000001}
 --- !u!1 &8586033509416070052
 GameObject:
   m_ObjectHideFlags: 0
