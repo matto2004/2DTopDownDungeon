@@ -156,7 +156,12 @@ MonoBehaviour:
   firePoint: {fileID: 1176041499}
   bulletPrefab: {fileID: 955362887009230810, guid: 67c794495df02464a82c66d4eca2ebee,
     type: 3}
-  bulletForce: 20
+  spellPrefab: {fileID: 4039453198612531063, guid: d672cb35bc498b34abc07dd4fee773ca,
+    type: 3}
+  type: 0
+  arrowForce: 5
+  spellForce: 10
+  charge: 0
 --- !u!114 &138922198
 MonoBehaviour:
   m_ObjectHideFlags: 0
