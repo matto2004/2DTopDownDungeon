@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    private PlayerStatManager stats;
+
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject spellPrefab;
+    public Sprite Warrior;
+    public Sprite Wizard;
+    public Sprite Archer;
     public int type; //1 Nahkampf 2 Bogen 3 Spell
 
     public float arrowForce = 0.5f;
@@ -15,28 +20,49 @@ public class Shooting : MonoBehaviour
     float time;
     float timeDelay;
 
+    public SpriteRenderer spriteRenderer;
+
     private void Start()
     {
+        stats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatManager>();
         time = 1f;
         timeDelay = 1f;
     }
 
-    private void Update()
+    public void spriteChanger()
     {
+        if(stats.charClass == "Archer")
+        {
+            spriteRenderer.sprite = Archer;
+        }
+        if (stats.charClass == "Wizard")
+        {
+            spriteRenderer.sprite = Wizard;
+        }
+        if (stats.charClass == "Warrior")
+        {
+            spriteRenderer.sprite = Warrior;
+        }
+    }
+
+    private void Update() 
+    {
+
+        spriteChanger();
         time = time + 1f * Time.deltaTime;
-        if (type == 2)
+        if (stats.CharClass == "Archer")
         {
             if (Input.GetButtonUp("Fire1"))
             {
                 if (time >= timeDelay)
                 {
                     time = 0f;
-                    arrowForce = arrowForce + charge / 20;
+                    arrowForce = arrowForce + charge / 40;
                     Shoot();
                 }
             }
         }
-        if (type == 3)
+        if (stats.CharClass == "Wizard")
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -50,7 +76,7 @@ public class Shooting : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (type == 2)
+        if (stats.CharClass == "Archer")
         {
             if (Input.GetButton("Fire1"))
             {

@@ -127,10 +127,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  damage: 0
+  health: 30
   stoppingDistance: 1.6
   retreatDistance: 1
   startTimeBtwShots: 2
-  projectile: {fileID: 6059487751149382063, guid: a3968bf71060adb4f8a2d847bfed7d55,
+  xProjectile: {fileID: 6059487751149382063, guid: a3968bf71060adb4f8a2d847bfed7d55,
     type: 3}
   player: {fileID: 0}
   FirePoint: {fileID: 1444024082199052805}

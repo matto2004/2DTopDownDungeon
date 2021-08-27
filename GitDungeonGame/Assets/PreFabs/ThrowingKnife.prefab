@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2459087439207903365}
   - component: {fileID: 1615390823304995252}
   - component: {fileID: 2596690322365372664}
+  - component: {fileID: 8370700522804258696}
   m_Layer: 0
   m_Name: ThrowingKnife
   m_TagString: Untagged
@@ -122,3 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &8370700522804258696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059487751149382063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45048b76d7eaba14985e72dcae71567e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

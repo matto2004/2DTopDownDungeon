@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    
     public float speed;
 
     private Transform player;
@@ -27,6 +28,10 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.CompareTag("Room"))
         {
             Destroy(gameObject);
+        }
+        if (collision.GetComponent<PlayerStatManager>())
+        {
+            //collision.GetComponent<PlayerStatManager>().receiveDmg(); DAMAGE
         }
     }
 
