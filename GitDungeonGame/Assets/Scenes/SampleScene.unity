@@ -249,7 +249,7 @@ MonoBehaviour:
   Archer: {fileID: 21300000, guid: eb7a4349e9f50bd43a1167ae149f84cf, type: 3}
   type: 0
   arrowForce: 0.5
-  spellForce: 1
+  spellForce: 1.5
   charge: 0
   spriteRenderer: {fileID: 138922200}
 --- !u!114 &138922198
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d3c5a3105fee80438ad04027cb84c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.3
+  moveSpeed: 1
   rb: {fileID: 138922199}
   cam: {fileID: 519420031}
 --- !u!50 &138922199
@@ -1524,6 +1524,8 @@ MonoBehaviour:
   - {fileID: 2352600640025335396, guid: 1462feab39a758045a4b5db78bf975c9, type: 3}
   - {fileID: 2432109134755259239, guid: 3ac7f599184e94b49b369d60096cb03d, type: 3}
   - {fileID: 2432109134755259239, guid: 3ac7f599184e94b49b369d60096cb03d, type: 3}
+  - {fileID: 7146971678755739541, guid: 387850b641c9b6d488e6ed8a1a132698, type: 3}
+  - {fileID: 6396111363117808608, guid: 5804b252ebe7e0746b54a4330f7cee01, type: 3}
   topRooms:
   - {fileID: 6103773244762308328, guid: 6fc90f4946af8c2499f4c82a74b3cec8, type: 3}
   - {fileID: 9005105221549166508, guid: c8d9ec89deec9d54494761e407e67830, type: 3}
@@ -1531,6 +1533,8 @@ MonoBehaviour:
   - {fileID: 2352600640025335396, guid: 1462feab39a758045a4b5db78bf975c9, type: 3}
   - {fileID: 2432109134755259239, guid: 3ac7f599184e94b49b369d60096cb03d, type: 3}
   - {fileID: 2432109134755259239, guid: 3ac7f599184e94b49b369d60096cb03d, type: 3}
+  - {fileID: 8430514654318742971, guid: b7b1b49d71f5d2c4ab2d025a66da16e9, type: 3}
+  - {fileID: 4974160885494991490, guid: 41085407e00636349bf7e934fc44fb88, type: 3}
   leftRooms:
   - {fileID: 4947045609858751093, guid: cf7b5625af2c8e14b921efcef154b970, type: 3}
   - {fileID: 9005105221549166508, guid: c8d9ec89deec9d54494761e407e67830, type: 3}
