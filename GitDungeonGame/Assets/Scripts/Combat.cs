@@ -73,18 +73,14 @@ public class Combat : MonoBehaviour
     {
         spriteChanger();
 
-        if(time < timeDelay)
-        {
-            WarriorfirePoint.SetActive(false);
-        }
+        
         if(stats.CharClass == "Warrior")
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                if(time>= timeDelay)
+                if(time >= timeDelay)
                 {
-
-                    WarriorfirePoint.SetActive(true);
+                    Attack();
                 }
             }
         }
@@ -142,9 +138,31 @@ public class Combat : MonoBehaviour
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
     }
+    
+    void Attack()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(WarriorfirePoint.transform.position, attackRange, whatIsEnemies);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.GetComponent<RangedEnemy>())
+            {
+                enemy.GetComponent<RangedEnemy>().takeDamage(stats.Damage);
+            }
+            else if (enemy.GetComponent<MeleeEnemy>())
+            {
+                enemy.GetComponent<MeleeEnemy>().takeDamage(stats.Damage);
+            }
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {
+
+        if(WarriorfirePoint == null)
+        {
+            return;
+        }
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(WarriorfirePoint.transform.position,attackRange);
     }
