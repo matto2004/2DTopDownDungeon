@@ -31,7 +31,9 @@ public class Projectile : MonoBehaviour
         }
         if (collision.GetComponent<PlayerStatManager>())
         {
-            //collision.GetComponent<PlayerStatManager>().receiveDmg(); DAMAGE
+            int d = gameObject.GetComponent<ProjectileStats>().Damage;
+            collision.GetComponent<PlayerStatManager>().receiveDmg(d);
+            Destroy(gameObject);
         }
     }
 

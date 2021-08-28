@@ -9,6 +9,9 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject spellPrefab;
+    public GameObject Bow;
+    public GameObject Rod;
+    public GameObject Sword;
     public Sprite Warrior;
     public Sprite Wizard;
     public Sprite Archer;
@@ -34,15 +37,32 @@ public class Shooting : MonoBehaviour
         if(stats.charClass == "Archer")
         {
             spriteRenderer.sprite = Archer;
+            Bow.SetActive(true);
+        }
+        else
+        {
+            Bow.SetActive(false);
         }
         if (stats.charClass == "Wizard")
         {
             spriteRenderer.sprite = Wizard;
+            Rod.SetActive(true);
+        }
+        else
+        {
+            Rod.SetActive(false);
         }
         if (stats.charClass == "Warrior")
         {
             spriteRenderer.sprite = Warrior;
+            Sword.SetActive(true);
         }
+        else
+        {
+            Sword.SetActive(false);
+        }
+
+        
     }
 
     private void Update() 
