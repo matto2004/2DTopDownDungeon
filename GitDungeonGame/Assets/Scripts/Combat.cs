@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Combat : MonoBehaviour
 {
     private PlayerStatManager stats;
 
-    public Transform firePoint;
+    public Transform ArcherfirePoint;
+    public GameObject WarriorfirePoint;
+    public Transform WizardfirePoint;
     public GameObject bulletPrefab;
     public GameObject spellPrefab;
     public GameObject Bow;
@@ -15,11 +17,12 @@ public class Shooting : MonoBehaviour
     public Sprite Warrior;
     public Sprite Wizard;
     public Sprite Archer;
-    public int type; //1 Nahkampf 2 Bogen 3 Spell
 
     public float arrowForce = 0.5f;
     public float spellForce = 1f;
     public float charge = 0f;
+    public float attackRange;
+    public LayerMask whatIsEnemies;
     float time;
     float timeDelay;
 
@@ -38,6 +41,7 @@ public class Shooting : MonoBehaviour
         {
             spriteRenderer.sprite = Archer;
             Bow.SetActive(true);
+            
         }
         else
         {
@@ -67,8 +71,24 @@ public class Shooting : MonoBehaviour
 
     private void Update() 
     {
-
         spriteChanger();
+
+        if(time < timeDelay)
+        {
+            WarriorfirePoint.SetActive(false);
+        }
+        if(stats.CharClass == "Warrior")
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if(time>= timeDelay)
+                {
+
+                    WarriorfirePoint.SetActive(true);
+                }
+            }
+        }
+
         time = time + 1f * Time.deltaTime;
         if (stats.CharClass == "Archer")
         {
@@ -110,16 +130,22 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, ArcherfirePoint.position, ArcherfirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * arrowForce, ForceMode2D.Impulse);
+        rb.AddForce(ArcherfirePoint.up * arrowForce, ForceMode2D.Impulse);
         charge = 0f;
         arrowForce = 0.5f;
     }
     void ShootSpell()
     {
-        GameObject spell = Instantiate(spellPrefab, firePoint.position, firePoint.rotation);
+        GameObject spell = Instantiate(spellPrefab, WizardfirePoint .position, WizardfirePoint.rotation);
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * spellForce, ForceMode2D.Impulse);
+        rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(WarriorfirePoint.transform.position,attackRange);
     }
 }
