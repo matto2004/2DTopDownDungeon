@@ -30,7 +30,10 @@ public class PlayerStatManager : MonoBehaviour
     {
         health = health + healing;
     }
-
+    public void Start()
+    {
+        charClass = MainMenu.Class;
+    }
     public void Update()
     {
         healthBar.fillAmount = health / 100 ; 
