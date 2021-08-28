@@ -873,6 +873,7 @@ GameObject:
   - component: {fileID: 1776318435038837109}
   - component: {fileID: 1913350706109181105}
   - component: {fileID: -163335313517399354}
+  - component: {fileID: -8024121245529062243}
   m_Layer: 8
   m_Name: BigRoomB
   m_TagString: Untagged
@@ -1017,6 +1018,18 @@ MonoBehaviour:
   RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
     type: 3}
   EnemysInThisRoom: []
+--- !u!114 &-8024121245529062243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396111363117808608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7008975315613305273
 GameObject:
   m_ObjectHideFlags: 0

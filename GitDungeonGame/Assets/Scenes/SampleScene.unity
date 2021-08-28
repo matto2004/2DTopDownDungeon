@@ -192,7 +192,6 @@ MonoBehaviour:
     type: 3}
   rooms: []
   waitTime: 0
-  boss: {fileID: 4899510946406163223, guid: f18e0461d5d103f4b9c7030db4031f00, type: 3}
 --- !u!4 &32817367
 Transform:
   m_ObjectHideFlags: 0
@@ -5732,7 +5731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArcherfirePoint: {fileID: 1879345443}
-  WarriorfirePoint: {fileID: 2091438338}
+  WarriorfirePoint: {fileID: 2091438337}
   WizardfirePoint: {fileID: 1355328759}
   bulletPrefab: {fileID: 955362887009230810, guid: 67c794495df02464a82c66d4eca2ebee,
     type: 3}
@@ -6680,7 +6679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2091438338
 Transform:
   m_ObjectHideFlags: 0

@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: -593046198852347584}
   - component: {fileID: 2745230203203604940}
   - component: {fileID: -3342811284094414255}
+  - component: {fileID: 7116530185347189508}
   m_Layer: 8
   m_Name: RoomRB
   m_TagString: Room
@@ -449,3 +450,15 @@ MonoBehaviour:
   RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
     type: 3}
   EnemysInThisRoom: []
+--- !u!114 &7116530185347189508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005105221549166508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2038f9b6311a8cf48ae42ccf65d85565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
