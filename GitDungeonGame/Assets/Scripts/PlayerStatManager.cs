@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerStatManager : MonoBehaviour
 {
     public Image healthBar;
-
     private float health = 100;
     private float damage = 10f;
     private int experience = 0;
@@ -19,11 +18,8 @@ public class PlayerStatManager : MonoBehaviour
     public int Level { get => level; set => level = value; }
     public float Health { get => health; set => health = value; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+
 
     public void receiveDmg(float projectileDmg)
     {
