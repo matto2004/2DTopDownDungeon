@@ -17,9 +17,17 @@ public class MeleeEnemy : Enemy
     private void Update()
     {
         Die();
-        if (Vector2.Distance(transform.position, target.position) > 0.3)
+        Vector2 direction = new Vector2(target.position.x, target.position.y)- new Vector2(transform.position.x, transform.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 4f);
+        if (hit)
         {
-         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); 
+            if (hit.collider.name == "Player")
+            {
+                if (Vector2.Distance(transform.position, target.position) > 0.3)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                }
+            }
         }
     }
 
