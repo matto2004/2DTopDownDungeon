@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEnemy : MonoBehaviour
+public class RangedEnemy : Enemy
 {
-    public float speed;
-    public float damage;
-    public float health;
-
-
     public float stoppingDistance;
     public float retreatDistance;
 
@@ -59,26 +54,13 @@ public class RangedEnemy : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-       
+
     }
-    
+
     public void Shot()
     {
         ProjectileStats projectile = Instantiate(xProjectile, transform.position, FirePoint.rotation).GetComponent<ProjectileStats>();
         projectile.SetValues(damage);
     }
 
-    public void takeDamage(float d)
-    {
-        health = health - d;
-    }
-
-
-    public void Die()
-    {
-        if(health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }

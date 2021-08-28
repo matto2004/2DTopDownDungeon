@@ -9,8 +9,7 @@ public class ProjectileSpell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        damage = 10f;
-        splashRange = 10f;
+ 
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class ProjectileSpell : MonoBehaviour
         var hitColliders = Physics2D.OverlapCircleAll(transform.position, splashRange);
         foreach(var hitCollider in hitColliders)
         {
-            var enemy = hitCollider.GetComponent<RangedEnemy>();
+            var enemy = hitCollider.GetComponent<Enemy>();
             if (enemy)
             {
                 var closestPoint = hitCollider.ClosestPoint(transform.position);
