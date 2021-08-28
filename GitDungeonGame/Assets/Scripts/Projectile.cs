@@ -14,6 +14,7 @@ public class Projectile : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         target = new Vector2(player.position.x, player.position.y);
+        Destroy(gameObject, 2);
     }
 
     private void Update()
@@ -31,7 +32,7 @@ public class Projectile : MonoBehaviour
         }
         if (collision.GetComponent<PlayerStatManager>())
         {
-            int d = gameObject.GetComponent<ProjectileStats>().Damage;
+            float d = gameObject.GetComponent<ProjectileStats>().Damage;
             collision.GetComponent<PlayerStatManager>().receiveDmg(d);
             Destroy(gameObject);
         }

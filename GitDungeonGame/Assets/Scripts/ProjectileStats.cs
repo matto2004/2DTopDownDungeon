@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ProjectileStats : MonoBehaviour
 {
-    private int damage;
+    private float damage;
 
-    public int Damage { get => damage; set => damage = value; }
+    public float Damage { get => damage; set => damage = value; }
 
-    public void SetValues(int d)
+    public void SetValues(float d)
     {
         this.damage = d;
     }
