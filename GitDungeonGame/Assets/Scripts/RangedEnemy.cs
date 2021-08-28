@@ -5,8 +5,8 @@ using UnityEngine;
 public class RangedEnemy : MonoBehaviour
 {
     public float speed;
-    public int damage;
-    public int health;
+    public float damage;
+    public float health;
 
 
     public float stoppingDistance;
@@ -68,7 +68,7 @@ public class RangedEnemy : MonoBehaviour
         projectile.SetValues(damage);
     }
 
-    public void takeDamage(int d)
+    public void takeDamage(float d)
     {
         health = health - d;
     }

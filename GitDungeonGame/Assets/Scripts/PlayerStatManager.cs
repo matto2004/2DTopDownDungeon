@@ -8,13 +8,13 @@ public class PlayerStatManager : MonoBehaviour
     public Image healthBar;
 
     private float health = 100;
-    private int damage = 10;
+    private float damage = 10f;
     private int experience = 0;
     private int level = 1;
     public string charClass;
 
     public string CharClass { get => charClass; set => charClass = value; }
-    public int Damage { get => damage; set => damage = value; }
+    public float Damage { get => damage; set => damage = value; }
     public int Experience { get => experience; set => experience = value; }
     public int Level { get => level; set => level = value; }
     public float Health { get => health; set => health = value; }
@@ -25,7 +25,7 @@ public class PlayerStatManager : MonoBehaviour
         
     }
 
-    public void receiveDmg(int projectileDmg)
+    public void receiveDmg(float projectileDmg)
     {
         health = health - projectileDmg;
     }
