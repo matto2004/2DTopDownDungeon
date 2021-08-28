@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6830653500056570147}
   - component: {fileID: 7769061120647218992}
   - component: {fileID: 5363743031856635937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 7628184378527444911}
   - component: {fileID: 7102219859652711327}
   - component: {fileID: 3208838269699418219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -218,7 +218,8 @@ GameObject:
   - component: {fileID: 5338871445599800631}
   - component: {fileID: -1228390534467803829}
   - component: {fileID: 4533535424049522602}
-  m_Layer: 0
+  - component: {fileID: 4500582835005947511}
+  m_Layer: 8
   m_Name: RoomL
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -279,7 +280,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 34225aaa7a19658478b19266ba88a59d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -327,3 +328,20 @@ EdgeCollider2D:
   - {x: -0.08999997, y: 0.090000056}
   - {x: -0.089998744, y: 0.019999074}
   - {x: -0.10000012, y: 0.019999774}
+--- !u!114 &4500582835005947511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894430403397646783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []

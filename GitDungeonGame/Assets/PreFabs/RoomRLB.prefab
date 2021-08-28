@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3781434428228781057}
   - component: {fileID: 7289430849815871027}
   - component: {fileID: 8949502565125908974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BPoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 3080856535017241748}
   - component: {fileID: 4505275703300639854}
   - component: {fileID: 7893763746791499595}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RPoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 4752682162381352349}
   - component: {fileID: 5138046083315162102}
   - component: {fileID: 6151349338142022418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 3736566129012823601}
   - component: {fileID: 6675537569122878221}
   - component: {fileID: 3775093839516026142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LPoint
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -408,7 +408,8 @@ GameObject:
   - component: {fileID: 7871898835576815146}
   - component: {fileID: 1535778401234410659}
   - component: {fileID: 8100116178650218600}
-  m_Layer: 0
+  - component: {fileID: 2970900150071835972}
+  m_Layer: 8
   m_Name: RoomRLB
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -471,7 +472,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ffb9ba64c6560fb4ba4bb4c51cf1a039, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -561,3 +562,20 @@ EdgeCollider2D:
   - {x: -0.08999945, y: -0.08999911}
   - {x: -0.019999549, y: -0.089999735}
   - {x: -0.020000288, y: -0.10000007}
+--- !u!114 &2970900150071835972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426744713874845293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []

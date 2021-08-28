@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5929840234836666734}
   - component: {fileID: 9190346058734868221}
   - component: {fileID: 7837050710974228792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 9107370273171041509}
   - component: {fileID: 9022487833384249318}
   - component: {fileID: 2200779571127892438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 7880222035441542648}
   - component: {fileID: 8663718652774255247}
   - component: {fileID: 6285226055777970395}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -297,7 +297,8 @@ GameObject:
   - component: {fileID: 7032398693316524519}
   - component: {fileID: 1024880383867224867}
   - component: {fileID: 610302901521693960}
-  m_Layer: 0
+  - component: {fileID: 3650530431473579822}
+  m_Layer: 8
   m_Name: RoomRLTB
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -361,7 +362,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: c48a1e5fb8cf9c5488939fb26665319c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -469,6 +470,23 @@ EdgeCollider2D:
   - {x: -0.08999985, y: -0.09000005}
   - {x: -0.020000134, y: -0.08999866}
   - {x: -0.01999937, y: -0.10000015}
+--- !u!114 &3650530431473579822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3259729723678839486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []
 --- !u!1 &6329181645276623361
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +499,7 @@ GameObject:
   - component: {fileID: 6559998073725299998}
   - component: {fileID: 589567335257815999}
   - component: {fileID: 2103824997274261025}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -576,7 +594,7 @@ GameObject:
   - component: {fileID: 1774245103012715619}
   - component: {fileID: 4537974451836153128}
   - component: {fileID: 7103650820491299709}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}

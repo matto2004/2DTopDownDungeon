@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2657516570048461293}
   - component: {fileID: 6277260270174028648}
   - component: {fileID: 4143879091619573336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -124,7 +124,8 @@ GameObject:
   - component: {fileID: 3523562025105243252}
   - component: {fileID: -4194521748931343317}
   - component: {fileID: 271971865145629813}
-  m_Layer: 0
+  - component: {fileID: 4585483439230608840}
+  m_Layer: 8
   m_Name: RoomB
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -185,7 +186,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 18d481796a9a11b4ba2561ef8daa1b0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -233,6 +234,23 @@ EdgeCollider2D:
   - {x: -0.089999855, y: -0.08999996}
   - {x: -0.020007698, y: -0.089990914}
   - {x: -0.019999973, y: -0.10000001}
+--- !u!114 &4585483439230608840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103773244762308328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []
 --- !u!1 &8586033509416070052
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +263,7 @@ GameObject:
   - component: {fileID: 888607868921866619}
   - component: {fileID: 871693366773561266}
   - component: {fileID: 6415066271402148344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}

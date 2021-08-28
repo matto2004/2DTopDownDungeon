@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1977985776761106612}
   - component: {fileID: 2903172167666201704}
   - component: {fileID: 7874026710111383519}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (4)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 6620024708759480097}
   - component: {fileID: 5222846759917485320}
   - component: {fileID: 8230880745569961188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 7285973746359586779}
   - component: {fileID: 8263720332030394628}
   - component: {fileID: 7138846872668841926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (3)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 3395248875261885535}
   - component: {fileID: 6035193161259545591}
   - component: {fileID: 1312969049274644984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 3060391521987595522}
   - component: {fileID: 1212629866089076949}
   - component: {fileID: 6043092700908007343}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (10)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -555,7 +555,7 @@ GameObject:
   - component: {fileID: 2966795964989952562}
   - component: {fileID: 8153745281531226374}
   - component: {fileID: 6783110950400225996}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (2)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 6805013086192941124}
   - component: {fileID: 6593650146182728204}
   - component: {fileID: 5537863877012604957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -761,7 +761,7 @@ GameObject:
   - component: {fileID: 6387295295036989137}
   - component: {fileID: 1550463457845844330}
   - component: {fileID: 2568341511570113740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (7)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -872,7 +872,8 @@ GameObject:
   - component: {fileID: 7183799940959087249}
   - component: {fileID: 1776318435038837109}
   - component: {fileID: 1913350706109181105}
-  m_Layer: 0
+  - component: {fileID: -163335313517399354}
+  m_Layer: 8
   m_Name: BigRoomB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -887,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6396111363117808608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.836872, y: -34.09634, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 1}
   m_Children:
   - {fileID: 7393756645273407260}
@@ -943,7 +944,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 2b2cbecd2dd8fa3429a1a39f17329e7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -999,6 +1000,23 @@ EdgeCollider2D:
   - {x: 0.08998081, y: 0.09020515}
   - {x: 0.020059697, y: 0.09041244}
   - {x: 0.019967508, y: 0.10013946}
+--- !u!114 &-163335313517399354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6396111363117808608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []
 --- !u!1 &7008975315613305273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1030,7 @@ GameObject:
   - component: {fileID: 7628024152066757141}
   - component: {fileID: 4670182566164391270}
   - component: {fileID: 6078620494023865094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (5)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1124,7 +1142,7 @@ GameObject:
   - component: {fileID: 7661909244829738559}
   - component: {fileID: 2650548215533540021}
   - component: {fileID: 4681686203045026994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (9)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1236,7 +1254,7 @@ GameObject:
   - component: {fileID: 7222991670631882399}
   - component: {fileID: 5753841227791850164}
   - component: {fileID: 104202382139584404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (6)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1348,7 +1366,7 @@ GameObject:
   - component: {fileID: 7190635279800561916}
   - component: {fileID: 6815995936409849946}
   - component: {fileID: 3848672953454288233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (8)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}

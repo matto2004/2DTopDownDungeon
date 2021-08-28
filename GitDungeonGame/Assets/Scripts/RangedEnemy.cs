@@ -6,6 +6,7 @@ public class RangedEnemy : Enemy
 {
     public float stoppingDistance;
     public float retreatDistance;
+    
 
     private float timeBtwShots;
     public float startTimeBtwShots;
@@ -16,12 +17,16 @@ public class RangedEnemy : Enemy
     private Rigidbody2D rb;
     public Transform FirePoint;
 
+    private Ray2D ray;
+    
+
     void Start()
     {
         damage = 5;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb = this.GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
@@ -32,9 +37,17 @@ public class RangedEnemy : Enemy
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
 
+        ray = new Ray2D(new Vector2(transform.position.x,transform.position.y),new Vector2(player.position.x,player.position.y));
+        RaycastHit hit;
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            {
+                { if(true)//Can See Player
+       
+                    transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
+                }
+            }
         }
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
@@ -42,10 +55,13 @@ public class RangedEnemy : Enemy
         }
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            if (true)//Can See Player
+            { 
+                    transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            }
         }
 
-        if (timeBtwShots <= 0)
+        if (timeBtwShots <= 0 && Vector2.Distance(transform.position,player.position) <=stoppingDistance)
         {
             Shot();
             timeBtwShots = startTimeBtwShots;
@@ -54,8 +70,30 @@ public class RangedEnemy : Enemy
         {
             timeBtwShots -= Time.deltaTime;
         }
-
+        
     }
+
+    bool CanSeePlayer()
+    {
+        bool val = false;
+
+        RaycastHit2D hit = Physics2D.Linecast(transform.position, player.position,1<<LayerMask.NameToLayer("Action"));
+
+        if(hit.collider != null)
+        {
+            if (hit.collider.gameObject.CompareTag("Player"))
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        }
+        return val;
+    }
+   
+
 
     public void Shot()
     {

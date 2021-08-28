@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2241012176501613042}
   - component: {fileID: 2069615406983013861}
   - component: {fileID: 5658242695668061841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -107,7 +107,8 @@ GameObject:
   - component: {fileID: 420387554062384011}
   - component: {fileID: 9156807934769729931}
   - component: {fileID: 4089111308237295719}
-  m_Layer: 0
+  - component: {fileID: -5041199707923290021}
+  m_Layer: 8
   m_Name: RoomRL
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -169,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e5f1e030fd8bb0b4199142938f2635d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -239,6 +240,23 @@ EdgeCollider2D:
   - {x: 0.09000038, y: -0.08999973}
   - {x: 0.090000056, y: -0.019999992}
   - {x: 0.1, y: -0.019999918}
+--- !u!114 &-5041199707923290021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460522209035658950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []
 --- !u!1 &2172243208085674781
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +269,7 @@ GameObject:
   - component: {fileID: 6206847564031304703}
   - component: {fileID: 2340627596475833334}
   - component: {fileID: 1067844388035660465}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -346,7 +364,7 @@ GameObject:
   - component: {fileID: 6369656293871667193}
   - component: {fileID: 7708200628731048532}
   - component: {fileID: 4062435756876595638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}

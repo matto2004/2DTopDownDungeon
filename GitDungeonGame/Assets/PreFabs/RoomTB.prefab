@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1234020807426945071}
   - component: {fileID: 9161393832981035871}
   - component: {fileID: 8575755270360165372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer (1)
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 4872688124083643031}
   - component: {fileID: 8992531196749657343}
   - component: {fileID: 1042990265880733368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -219,7 +219,8 @@ GameObject:
   - component: {fileID: -3818034574661892003}
   - component: {fileID: 4294665723232946600}
   - component: {fileID: 5983831803100140864}
-  m_Layer: 0
+  - component: {fileID: -2323038841647079015}
+  m_Layer: 8
   m_Name: RoomTB
   m_TagString: Room
   m_Icon: {fileID: 0}
@@ -281,7 +282,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 799efd27eb33c964d858e7785160dc6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -349,6 +350,23 @@ EdgeCollider2D:
   - {x: -0.08999945, y: -0.08999911}
   - {x: -0.019999549, y: -0.089999735}
   - {x: -0.020000288, y: -0.10000007}
+--- !u!114 &-2323038841647079015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2352600640025335396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d6e40aba444d543877d29e0cab6bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeeleEnemy: {fileID: 8298758629444804362, guid: 73be81be73966da4db7dc18b0089bf2c,
+    type: 3}
+  RangedEnemy: {fileID: 1444024082525996405, guid: f85fcdb380379b943b83dd63fdfd910c,
+    type: 3}
+  EnemysInThisRoom: []
 --- !u!1 &2673144786524037883
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +379,7 @@ GameObject:
   - component: {fileID: 8069626868279525855}
   - component: {fileID: 5384855863709203291}
   - component: {fileID: 4394841168613675963}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BPoint
   m_TagString: SpawnPoint
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
