@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Combat : MonoBehaviour
 {
     private PlayerStatManager stats;
+    public SpriteRenderer spriteRenderer;
 
     public Transform ArcherfirePoint;
     public GameObject WarriorfirePoint;
@@ -22,12 +23,11 @@ public class Combat : MonoBehaviour
 
     public float arrowForce = 0.5f;
     public float spellForce = 1f;
-    public float charge = 0f;
-    public float attackRange;
-    float time;
-    float timeDelay;
-
-    public SpriteRenderer spriteRenderer;
+    private float charge = 0f;
+    private readonly float maxCharge = 120f;
+    private readonly float attackRange;
+    private float time;
+    private float timeDelay;
 
     private void Start()
     {
@@ -42,7 +42,6 @@ public class Combat : MonoBehaviour
         {
             spriteRenderer.sprite = Archer;
             Bow.SetActive(true);
-            
         }
         else
         {
@@ -66,14 +65,12 @@ public class Combat : MonoBehaviour
         {
             Sword.SetActive(false);
         }
-
-        
     }
 
     private void Update() 
     {
         spriteChanger(); 
-        time = time + 1f * Time.deltaTime;
+        time += 1f * Time.deltaTime;
 
         if (SceneManager.GetActiveScene().buildIndex == 2) {
         if(stats.CharClass == "Warrior")
@@ -96,7 +93,7 @@ public class Combat : MonoBehaviour
                 {
                     time = 0f;
                     arrowForce = arrowForce + charge / 40;
-                    Shoot();
+                    ShootArrow();
                 }
             }
         }
@@ -119,15 +116,15 @@ public class Combat : MonoBehaviour
         {
             if (Input.GetButton("Fire1"))
             {
-                if (charge < 120)
+                if (charge < maxCharge)
                 {
-                    charge = charge + 1;
+                    charge++;
                 }
             }
         }
     }
 
-    void Shoot()
+    void ShootArrow()
     {
         GameObject bullet = Instantiate(bulletPrefab, ArcherfirePoint.position, ArcherfirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -135,7 +132,7 @@ public class Combat : MonoBehaviour
         rb.AddForce(ArcherfirePoint.up * arrowForce, ForceMode2D.Impulse);
         charge = 0f;
         arrowForce = 0.5f;
-        stats.setTime(0f);
+        stats.SetTime(0f);
     }
     void ShootSpell()
     {
@@ -143,13 +140,13 @@ public class Combat : MonoBehaviour
         spell.GetComponent<ProjectileStats>().SetValues(stats.Damage);
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
-        stats.setTime(0f);
+        stats.SetTime(0f);
     }
 
     void Attack()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(WarriorfirePoint.transform.position, attackRange);
-        stats.setTime(0f);
+        stats.SetTime(0f);
         foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.GetComponent<RangedEnemy>())
@@ -167,7 +164,6 @@ public class Combat : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-
         if(WarriorfirePoint == null)
         {
             return;

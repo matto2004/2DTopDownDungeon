@@ -7,17 +7,16 @@ public class Room : MonoBehaviour
 
     public GameObject MeeleEnemy;
     public GameObject RangedEnemy;
+    private Random rand = new Random();
+    public GameObject[] EnemysInThisRoom;
+
     private float randPosx;
     private float randPosy;
     private int randAmount;
     private int randEnemy;
-    private Random rand = new Random();
-    public GameObject[] EnemysInThisRoom;
-
 
     void Start()
-    {
-        
+    {  
         randAmount = Random.Range(1, 5);
         EnemysInThisRoom = new GameObject[randAmount];
 
@@ -38,11 +37,4 @@ public class Room : MonoBehaviour
             }
         }
     }
-
-
-
-
-
-    
-   
 }

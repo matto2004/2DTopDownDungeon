@@ -14,7 +14,7 @@ public class PlayerStatManager : MonoBehaviour
     public string charClass;
 
     public float currenttime;
-    private float timeDelay = 10;
+    private readonly float timeDelay = 10;
     public string CharClass { get => charClass; set => charClass = value; }
     public float Damage { get => damage; set => damage = value; }
     public int Experience { get => experience; set => experience = value; }
@@ -23,18 +23,18 @@ public class PlayerStatManager : MonoBehaviour
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
     public float Currenttime { get => Currenttime; set => Currenttime = value; }
 
-    public void receiveDmg(float projectileDmg)
+    public void ReceiveDmg(float projectileDmg)
     {
-        health = health - projectileDmg;
+        health -= projectileDmg;
         currenttime = 0f;
     }
 
-    public void receiveHealing(int healing)
+    public void ReceiveHealing(int healing)
     {
-        health = health + healing;
+        health += healing;
     }
 
-    public void setTime(float t)
+    public void SetTime(float t)
     {
         currenttime = t;
     }
@@ -44,7 +44,7 @@ public class PlayerStatManager : MonoBehaviour
     }
     public void Update()
     {
-        currenttime = currenttime + 1f * Time.deltaTime;
+        currenttime += 1f * Time.deltaTime;
 
         if(currenttime >= timeDelay)
         {
@@ -54,7 +54,6 @@ public class PlayerStatManager : MonoBehaviour
         {
             isInCombat = true;
         }
-
         healthBar.fillAmount = health / 100 ; 
     }
 
