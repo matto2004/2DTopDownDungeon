@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ProjectileArrow : MonoBehaviour
 {
-    GameObject enemy;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Room"))
@@ -18,5 +16,4 @@ public class ProjectileArrow : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

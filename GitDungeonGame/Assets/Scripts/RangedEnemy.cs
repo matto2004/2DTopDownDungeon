@@ -6,8 +6,6 @@ public class RangedEnemy : Enemy
 {
     public float stoppingDistance;
     public float retreatDistance;
-    
-
     private float timeBtwShots;
     public float startTimeBtwShots;
 
@@ -16,9 +14,6 @@ public class RangedEnemy : Enemy
     public Transform player;
     private Rigidbody2D rb;
     public Transform FirePoint;
-
-    private Ray2D ray;
-    
 
     void Start()
     {
@@ -68,10 +63,6 @@ public class RangedEnemy : Enemy
         }
         
     }
-
-  
-   
-
 
     public void Shot()
     {

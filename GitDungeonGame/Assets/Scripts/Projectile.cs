@@ -22,8 +22,6 @@ public class Projectile : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
-  
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Room"))
@@ -33,7 +31,7 @@ public class Projectile : MonoBehaviour
         if (collision.GetComponent<PlayerStatManager>())
         {
             float d = gameObject.GetComponent<ProjectileStats>().Damage;
-            collision.GetComponent<PlayerStatManager>().receiveDmg(d);
+            collision.GetComponent<PlayerStatManager>().ReceiveDmg(d);
             Destroy(gameObject);
         }
     }
