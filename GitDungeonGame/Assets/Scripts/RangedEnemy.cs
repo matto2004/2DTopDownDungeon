@@ -16,7 +16,6 @@ public class RangedEnemy : Enemy
     public Transform player;
     private Rigidbody2D rb;
     public Transform FirePoint;
-    Transform target;
 
     private Ray2D ray;
     
@@ -27,24 +26,21 @@ public class RangedEnemy : Enemy
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
         rb = this.GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
     }
 
     void Update()
     {
         Die();
-
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
-
-        Vector2 direction1 = new Vector2(target.position.x, target.position.y) - new Vector2(transform.position.x, transform.position.y);
+        Vector2 direction1 = new Vector2(player.position.x, player.position.y) - new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction1, 4f);
         if (hit)
         {
             if (hit.collider.name == "Player")
             {
+                Vector3 direction = player.position - transform.position;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                rb.rotation = angle;
                 if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
                 {
                     transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -57,17 +53,18 @@ public class RangedEnemy : Enemy
                 {
                     transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
                 }
+                if (timeBtwShots <= 0 && Vector2.Distance(transform.position, player.position) <= stoppingDistance)
+                {
+                    Shot();
+                    timeBtwShots = startTimeBtwShots;
+                }
+                else
+                {
+                    timeBtwShots -= Time.deltaTime;
+                }
             }
 
-            if (timeBtwShots <= 0 && Vector2.Distance(transform.position, player.position) <= stoppingDistance)
-            {
-                Shot();
-                timeBtwShots = startTimeBtwShots;
-            }
-            else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
+            
         }
         
     }
