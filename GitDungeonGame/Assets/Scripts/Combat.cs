@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Combat : MonoBehaviour
 {
@@ -70,9 +72,10 @@ public class Combat : MonoBehaviour
 
     private void Update() 
     {
-        spriteChanger();
+        spriteChanger(); 
+        time = time + 1f * Time.deltaTime;
 
-        
+        if (SceneManager.GetActiveScene().buildIndex == 2) {
         if(stats.CharClass == "Warrior")
         {
             if (Input.GetButtonDown("Fire1"))
@@ -85,7 +88,6 @@ public class Combat : MonoBehaviour
             }
         }
 
-        time = time + 1f * Time.deltaTime;
         if (stats.CharClass == "Archer")
         {
             if (Input.GetButtonUp("Fire1"))
@@ -110,13 +112,14 @@ public class Combat : MonoBehaviour
             }
         }
     }
+    }
     private void FixedUpdate()
     {
         if (stats.CharClass == "Archer")
         {
             if (Input.GetButton("Fire1"))
             {
-                if (charge < 240)
+                if (charge < 120)
                 {
                     charge = charge + 1;
                 }
@@ -128,10 +131,11 @@ public class Combat : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, ArcherfirePoint.position, ArcherfirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        bullet.GetComponent<ProjectileStats>().SetValues(stats.Damage);
+        bullet.GetComponent<ProjectileStats>().SetValues(stats.Damage * (charge/80)+5f);
         rb.AddForce(ArcherfirePoint.up * arrowForce, ForceMode2D.Impulse);
         charge = 0f;
         arrowForce = 0.5f;
+        stats.setTime(0f);
     }
     void ShootSpell()
     {
@@ -139,12 +143,13 @@ public class Combat : MonoBehaviour
         spell.GetComponent<ProjectileStats>().SetValues(stats.Damage);
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
+        stats.setTime(0f);
     }
-    
+
     void Attack()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(WarriorfirePoint.transform.position, attackRange);
-
+        stats.setTime(0f);
         foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.GetComponent<RangedEnemy>())

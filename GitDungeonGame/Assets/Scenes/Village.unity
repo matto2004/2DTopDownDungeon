@@ -1541,7 +1541,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150c6918f04db73429f29f64593c7181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 451514309}
+  ArcherfirePoint: {fileID: 451514309}
+  WarriorfirePoint: {fileID: 451514308}
+  WizardfirePoint: {fileID: 451514309}
   bulletPrefab: {fileID: 955362887009230810, guid: 67c794495df02464a82c66d4eca2ebee,
     type: 3}
   spellPrefab: {fileID: 4039453198612531063, guid: d672cb35bc498b34abc07dd4fee773ca,
@@ -1552,10 +1554,10 @@ MonoBehaviour:
   Warrior: {fileID: 21300000, guid: d3512caf14168f94eb01c3ee2f50e089, type: 3}
   Wizard: {fileID: 21300000, guid: 2a63d4d89831ad247bc73d7ebf909b64, type: 3}
   Archer: {fileID: 21300000, guid: eb7a4349e9f50bd43a1167ae149f84cf, type: 3}
-  type: 0
   arrowForce: 0.5
   spellForce: 1.5
   charge: 0
+  attackRange: 0
   spriteRenderer: {fileID: 1878099512}
 --- !u!114 &1878099510
 MonoBehaviour:

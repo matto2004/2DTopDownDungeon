@@ -9,15 +9,14 @@ public class SceneSwitcher : MonoBehaviour
     public GameObject Player;
     public void ChangeFromDungeonToVillage()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        
-
+        if (Player.GetComponent<PlayerStatManager>().IsInCombat == false)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
     public void ChangeFromVillageToDungeon()
-    {
-        
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
-
+    {  
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
+
 }
