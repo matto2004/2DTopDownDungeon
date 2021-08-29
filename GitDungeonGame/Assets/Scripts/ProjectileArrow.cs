@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class ProjectileArrow : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    public float damage;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if (collision.CompareTag("Room"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<PlayerStatManager>().receiveDmg(damage);
+            Destroy(gameObject);
+        }
     }
 }
