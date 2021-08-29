@@ -19,7 +19,7 @@ public class RoomSpawner : MonoBehaviour
     {
         Destroy(gameObject,waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
-        Invoke("Spawn",1f);
+        Invoke("Spawn",0.1f);
     }
 
     void Spawn()
@@ -59,7 +59,9 @@ public class RoomSpawner : MonoBehaviour
 
         if (other.CompareTag("Destroyer"))
         {
+
             spawned = true;
+
         }
         if (other.CompareTag("SpawnPoint"))
         {

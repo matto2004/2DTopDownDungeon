@@ -22,7 +22,6 @@ public class Combat : MonoBehaviour
     public float spellForce = 1f;
     public float charge = 0f;
     public float attackRange;
-    public LayerMask whatIsEnemies;
     float time;
     float timeDelay;
 
@@ -78,8 +77,9 @@ public class Combat : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                if(time >= timeDelay)
+                if (time >= timeDelay)
                 {
+                    time = 0f;
                     Attack();
                 }
             }
@@ -141,16 +141,18 @@ public class Combat : MonoBehaviour
     
     void Attack()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(WarriorfirePoint.transform.position, attackRange, whatIsEnemies);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(WarriorfirePoint.transform.position, attackRange);
 
         foreach (Collider2D enemy in hitEnemies)
         {
             if (enemy.GetComponent<RangedEnemy>())
             {
+                Debug.Log("hit" + enemy.name);
                 enemy.GetComponent<RangedEnemy>().takeDamage(stats.Damage);
             }
             else if (enemy.GetComponent<MeleeEnemy>())
             {
+                Debug.Log("hit" + enemy.name);
                 enemy.GetComponent<MeleeEnemy>().takeDamage(stats.Damage);
             }
         }

@@ -39,7 +39,7 @@ public class RangedEnemy : Enemy
             if (hit.collider.name == "Player")
             {
                 Vector3 direction = player.position - transform.position;
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
                 rb.rotation = angle;
                 if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
                 {
