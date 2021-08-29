@@ -5,18 +5,7 @@ using UnityEngine;
 public class ProjectileSpell : MonoBehaviour
 {
     public float splashRange;
-    public float damage;
-    // Start is called before the first frame update
-    void Start()
-    {
- 
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Room"))
@@ -24,7 +13,7 @@ public class ProjectileSpell : MonoBehaviour
             SplashDamage();
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Enemy"))
+        else if (collision.CompareTag("Enemy"))
         {
             SplashDamage();
             Destroy(gameObject);
@@ -42,7 +31,7 @@ public class ProjectileSpell : MonoBehaviour
                 var distance = Vector3.Distance(closestPoint, transform.position);
 
                 var damagePercent = Mathf.InverseLerp(splashRange, 0, distance);
-                enemy.takeDamage(damagePercent * damage);
+                enemy.takeDamage(damagePercent * this.gameObject.GetComponent<ProjectileStats>().Damage);
             }
         }
     }

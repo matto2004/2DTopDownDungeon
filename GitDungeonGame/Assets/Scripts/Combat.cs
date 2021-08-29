@@ -128,6 +128,7 @@ public class Combat : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, ArcherfirePoint.position, ArcherfirePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        bullet.GetComponent<ProjectileStats>().SetValues(stats.Damage);
         rb.AddForce(ArcherfirePoint.up * arrowForce, ForceMode2D.Impulse);
         charge = 0f;
         arrowForce = 0.5f;
@@ -135,6 +136,7 @@ public class Combat : MonoBehaviour
     void ShootSpell()
     {
         GameObject spell = Instantiate(spellPrefab, WizardfirePoint .position, WizardfirePoint.rotation);
+        spell.GetComponent<ProjectileStats>().SetValues(stats.Damage);
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
     }
