@@ -5769,6 +5769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150c6918f04db73429f29f64593c7181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1197079065}
   ArcherfirePoint: {fileID: 1879345443}
   WarriorfirePoint: {fileID: 2091438337}
   WizardfirePoint: {fileID: 1355328759}
@@ -5784,9 +5785,6 @@ MonoBehaviour:
   Archer: {fileID: 21300000, guid: eb7a4349e9f50bd43a1167ae149f84cf, type: 3}
   arrowForce: 0.5
   spellForce: 1.5
-  charge: 0
-  attackRange: 0.2
-  spriteRenderer: {fileID: 1197079065}
 --- !u!114 &1197079063
 MonoBehaviour:
   m_ObjectHideFlags: 0
