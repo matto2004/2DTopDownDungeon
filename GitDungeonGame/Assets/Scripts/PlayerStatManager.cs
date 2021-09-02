@@ -12,10 +12,13 @@ public class PlayerStatManager : MonoBehaviour
     private int level = 1;
     private bool isInCombat;
     public string charClass;
+    public int character;
+    public Animator am;
 
     public float currenttime;
     private readonly float timeDelay = 10;
     public string CharClass { get => charClass; set => charClass = value; }
+    public int Character { get => character; set => character = value; }
     public float Damage { get => damage; set => damage = value; }
     public int Experience { get => experience; set => experience = value; }
     public int Level { get => level; set => level = value; }
@@ -45,6 +48,7 @@ public class PlayerStatManager : MonoBehaviour
     public void Update()
     {
         currenttime += 1f * Time.deltaTime;
+        am.SetInteger("Character", this.Character);
 
         if(currenttime >= timeDelay)
         {
@@ -55,6 +59,7 @@ public class PlayerStatManager : MonoBehaviour
             isInCombat = true;
         }
         healthBar.fillAmount = health / 100 ; 
+
     }
 
 }

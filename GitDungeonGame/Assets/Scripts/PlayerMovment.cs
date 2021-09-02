@@ -8,7 +8,9 @@ public class PlayerMovment : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 moveDirection;
     public Camera cam;
+    public Animator am;
     Vector2 mousePos;
+    public GameObject playerFirePoint;
 
     void Update()
     {
@@ -20,9 +22,11 @@ public class PlayerMovment : MonoBehaviour
     {
         Move();
 
-        Vector2 lookDir = mousePos - rb.position;
+        Vector2 lookDir = (mousePos - rb.position).normalized;
+        am.SetFloat("Horizontal", lookDir.x);
+        am.SetFloat("Vertical", lookDir.y);
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        playerFirePoint.transform.rotation = Qu87aternion.Euler(0, 0, angle);
     }
     void ProcessInputs()
     {
@@ -30,6 +34,9 @@ public class PlayerMovment : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
+
+        am.SetFloat("Speed", moveDirection.sqrMagnitude);
+
     }
 
     void Move()
