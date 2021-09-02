@@ -56,10 +56,10 @@ public class RoomSpawner : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Destroyer"))
-        {
-            spawned = true;
-        }
+        //if (other.CompareTag("Destroyer"))
+      //  {
+      //      spawned = true;
+      //  }
         if (other.CompareTag("SpawnPoint"))
         {
             if (other.GetComponent<RoomSpawner>().spawned == false && spawned == false)

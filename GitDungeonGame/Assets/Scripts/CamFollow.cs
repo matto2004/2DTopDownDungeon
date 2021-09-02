@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class CamFollow : MonoBehaviour
 {
-    public Transform target;
+    private Transform target;
     public Vector3 offset;
-    public float followSpeed = 10f;
+    public float lerpSpeed = 1.0f;
+
+    private void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").transform;        
+    }
     void Update()
     {
-        transform.position = target.position + offset;   
+        transform.position = Vector3.Lerp(transform.position, target.position + offset, lerpSpeed * Time.deltaTime);
+
     }
 }
