@@ -20,6 +20,8 @@ public class Combat : MonoBehaviour
     public Sprite Warrior;
     public Sprite Wizard;
     public Sprite Archer;
+    public Animator playerAnimator;
+    public Animator weaponAnimator;
 
     public float arrowForce = 0.5f;
     public float spellForce = 1f;
@@ -50,11 +52,11 @@ public class Combat : MonoBehaviour
         if (stats.charClass == "Wizard")
         {
             spriteRenderer.sprite = Wizard;
-            Rod.SetActive(true);
+           // Rod.SetActive(true);
         }
         else
         {
-            Rod.SetActive(false);
+            //Rod.SetActive(false);
         }
         if (stats.charClass == "Warrior")
         {
@@ -136,13 +138,27 @@ public class Combat : MonoBehaviour
     }
     void ShootSpell()
     {
+        playerAnimator.SetInteger("ShootState", 1);
+        weaponAnimator.SetInteger("ShootState", 1);
+        Vector3 lookDir = WizardfirePoint.rotation * Vector3.up;
+        playerAnimator.SetFloat("HorizontalAim", lookDir.x);
+        playerAnimator.SetFloat("VerticalAim", lookDir.y);
+        weaponAnimator.SetFloat("HorizontalAim", lookDir.x);
+        weaponAnimator.SetFloat("VerticalAim", lookDir.y);
+
         GameObject spell = Instantiate(spellPrefab, WizardfirePoint .position, WizardfirePoint.rotation);
         spell.GetComponent<ProjectileStats>().SetValues(stats.Damage);
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
         stats.SetTime(0f);
+        StartCoroutine(Wait(1f));
     }
-
+    IEnumerator Wait(float duration)
+    {
+        yield return new WaitForSeconds(duration);   //Wait
+        playerAnimator.SetInteger("ShootState", 0);
+        weaponAnimator.SetInteger("ShootState", 0);
+    }
     void Attack()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(WarriorfirePoint.transform.position, attackRange);

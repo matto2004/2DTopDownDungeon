@@ -8,7 +8,8 @@ public class PlayerMovment : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 moveDirection;
     public Camera cam;
-    public Animator am;
+    public Animator playerAnimator;
+    public Animator rodAnimator;
     Vector2 mousePos;
     public GameObject playerFirePoint;
 
@@ -23,8 +24,6 @@ public class PlayerMovment : MonoBehaviour
         Move();
 
         Vector2 lookDir = (mousePos - rb.position).normalized;
-        am.SetFloat("Horizontal", lookDir.x);
-        am.SetFloat("Vertical", lookDir.y);
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         playerFirePoint.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
@@ -33,9 +32,14 @@ public class PlayerMovment : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        moveDirection = new Vector2(moveX, moveY).normalized;
 
-        am.SetFloat("Speed", moveDirection.sqrMagnitude);
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        playerAnimator.SetFloat("Horizontal", moveDirection.x);
+        playerAnimator.SetFloat("Vertical", moveDirection.y);
+        rodAnimator.SetFloat("Horizontal", moveDirection.x);
+        rodAnimator.SetFloat("Vertical", moveDirection.y);
+
+        playerAnimator.SetFloat("Speed", moveDirection.sqrMagnitude);
 
     }
 
