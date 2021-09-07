@@ -74,7 +74,7 @@ public class Combat : MonoBehaviour
         spriteChanger(); 
         time += 1f * Time.deltaTime;
 
-        if (SceneManager.GetActiveScene().buildIndex == 1) {
+        if (SceneManager.GetActiveScene().buildIndex == 2) {
         if(stats.CharClass == "Warrior")
         {
             if (Input.GetButtonDown("Fire1"))
