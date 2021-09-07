@@ -7,11 +7,19 @@ public class PlayerMovment : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
-    public Camera cam;
+    private Camera cam;
     public Animator am;
     Vector2 mousePos;
     public GameObject playerFirePoint;
 
+    private void Start()
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
     void Update()
     {
         ProcessInputs();

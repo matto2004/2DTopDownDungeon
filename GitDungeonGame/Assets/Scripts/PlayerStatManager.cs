@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerStatManager : MonoBehaviour
 {
+    public void Start()
+    {
+        DontDestroyOnLoad(gameObject);       
+    }
+
+    public string Name;
+
     public Image healthBar;
     private float health = 100;
     private float damage = 10f;
     private int experience = 0;
     private int level = 1;
     private bool isInCombat;
+
     public string charClass;
+    public int charNum;
+
     public int character;
     public Animator am;
 
@@ -25,6 +35,7 @@ public class PlayerStatManager : MonoBehaviour
     public float Health { get => health; set => health = value; }
     public bool IsInCombat { get => isInCombat; set => isInCombat = value; }
     public float Currenttime { get => Currenttime; set => Currenttime = value; }
+    public int CharNum { get => charNum; set => charNum = value; }
 
     public void ReceiveDmg(float projectileDmg)
     {
@@ -41,10 +52,9 @@ public class PlayerStatManager : MonoBehaviour
     {
         currenttime = t;
     }
-    public void Start()
-    {
-        charClass = MainMenu.Class;
-    }
+
+    
+   
     public void Update()
     {
         currenttime += 1f * Time.deltaTime;
