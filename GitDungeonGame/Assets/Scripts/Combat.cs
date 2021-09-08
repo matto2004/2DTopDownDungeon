@@ -14,12 +14,6 @@ public class Combat : MonoBehaviour
     public Transform WizardfirePoint;
     public GameObject bulletPrefab;
     public GameObject spellPrefab;
-    public GameObject Bow;
-    public GameObject Rod;
-    public GameObject Sword;
-    public Sprite Warrior;
-    public Sprite Wizard;
-    public Sprite Archer;
     public Animator playerAnimator;
     public Animator weaponAnimator;
 
@@ -38,40 +32,8 @@ public class Combat : MonoBehaviour
         timeDelay = 1f;
     }
 
-    public void spriteChanger()
-    {
-        if(stats.charClass == "Archer")
-        {
-            spriteRenderer.sprite = Archer;
-            Bow.SetActive(true);
-        }
-        else
-        {
-            Bow.SetActive(false);
-        }
-        if (stats.charClass == "Wizard")
-        {
-            spriteRenderer.sprite = Wizard;
-           // Rod.SetActive(true);
-        }
-        else
-        {
-            //Rod.SetActive(false);
-        }
-        if (stats.charClass == "Warrior")
-        {
-            spriteRenderer.sprite = Warrior;
-            Sword.SetActive(true);
-        }
-        else
-        {
-            Sword.SetActive(false);
-        }
-    }
-
     private void Update() 
     {
-        spriteChanger(); 
         time += 1f * Time.deltaTime;
 
         if (SceneManager.GetActiveScene().buildIndex == 2) {
@@ -140,7 +102,9 @@ public class Combat : MonoBehaviour
     {
         playerAnimator.SetInteger("ShootState", 1);
         weaponAnimator.SetInteger("ShootState", 1);
+
         Vector3 lookDir = WizardfirePoint.rotation * Vector3.up;
+
         playerAnimator.SetFloat("HorizontalAim", lookDir.x);
         playerAnimator.SetFloat("VerticalAim", lookDir.y);
         weaponAnimator.SetFloat("HorizontalAim", lookDir.x);
@@ -151,6 +115,7 @@ public class Combat : MonoBehaviour
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
         rb.AddForce(WizardfirePoint.up * spellForce, ForceMode2D.Impulse);
         stats.SetTime(0f);
+
         StartCoroutine(Wait(1f));
     }
     IEnumerator Wait(float duration)

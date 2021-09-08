@@ -48,11 +48,10 @@ public class PlayerMovment : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         playerAnimator.SetFloat("Horizontal", moveDirection.x);
         playerAnimator.SetFloat("Vertical", moveDirection.y);
-        rodAnimator.SetFloat("Horizontal", moveDirection.x);
-        rodAnimator.SetFloat("Vertical", moveDirection.y);
-
         playerAnimator.SetFloat("Speed", moveDirection.sqrMagnitude);
 
+        rodAnimator.SetFloat("Horizontal", moveDirection.x);
+        rodAnimator.SetFloat("Vertical", moveDirection.y);
     }
 
     void Move()

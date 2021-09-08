@@ -23,7 +23,8 @@ public class PlayerStatManager : MonoBehaviour
     public int charNum;
 
     public int character;
-    public Animator am;
+    public Animator playerAnimator;
+    public Animator rodAnimator;
 
     public float currenttime;
     private readonly float timeDelay = 10;
@@ -58,7 +59,8 @@ public class PlayerStatManager : MonoBehaviour
     public void Update()
     {
         currenttime += 1f * Time.deltaTime;
-        am.SetInteger("Character", this.Character);
+        playerAnimator.SetInteger("Character", this.Character);
+        rodAnimator.SetInteger("Character", this.Character);
 
         if(currenttime >= timeDelay)
         {
